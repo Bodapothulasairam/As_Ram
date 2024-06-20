@@ -6,7 +6,7 @@
 }
 
 .example-card {
-    width: 75%; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
     height: 75%; /* Adjust as needed */
     display: flex;
     flex-direction: row;
@@ -18,12 +18,12 @@
 }
 
 .image-section {
-    flex: 0 0 40%; /* This will make sure your image section takes up 40% of the container's width */
+    flex: 0 0 34%; /* This will make sure your image section takes up 40% of the container's width */
     overflow: hidden; /* Hide the overflow */
 }
 
 .text-section {
-    flex: 0 0 60%; /* This will make sure your text section takes up 60% of the container's width */
+    flex: 0 0 66%; /* This will make sure your text section takes up 60% of the container's width */
     overflow: auto; /* Add scroll if content overflows */
 }
 
@@ -31,4 +31,15 @@
     width: 100%; /* This will make sure your image is not wider than its container */
     height: 100%; /* This will make sure your image is not taller than its container */
     object-fit: contain;
+}
+@media screen and (max-width: 600px) {
+    .example-card {
+        flex-direction: column; /* Elements are stacked vertically */
+        overflow: auto;
+    }
+
+    .image-section, .text-section {
+        flex: 0 0 auto; /* Elements will take up as much space as they need */
+        width: 100%; /* Elements will take up the full width of the container */
+    }
 }
