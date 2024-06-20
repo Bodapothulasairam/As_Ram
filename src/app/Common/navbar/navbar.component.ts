@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SharedServicesService } from '../../shared-services.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 
+  constructor(private sideNavService: SharedServicesService) {}
+
+  toggleSideNav() {
+    this.sideNavService.toggleSideNav();
+  }
 }
