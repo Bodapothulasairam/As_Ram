@@ -32,7 +32,7 @@
     height: 100%; /* This will make sure your image is not taller than its container */
     object-fit: contain;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .example-card {
         flex-direction: column; /* Elements are stacked vertically */
         overflow: auto;
