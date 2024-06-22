@@ -17,6 +17,9 @@ import { SharedServicesService } from './shared-services.service';
     ]
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   @ViewChild('drawer') drawer!: MatDrawer;
   constructor(private sideNavService: SharedServicesService) {}
   ngOnInit() {

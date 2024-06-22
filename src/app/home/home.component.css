@@ -18,12 +18,12 @@
 }
 
 .image-section {
-    flex: 0 0 34%; /* This will make sure your image section takes up 40% of the container's width */
+    flex: 0 0 40%; /* This will make sure your image section takes up 40% of the container's width */
     overflow: hidden; /* Hide the overflow */
 }
 
 .text-section {
-    flex: 0 0 66%; /* This will make sure your text section takes up 60% of the container's width */
+    flex: 0 0 60%; /* This will make sure your text section takes up 60% of the container's width */
     overflow: auto; /* Add scroll if content overflows */
 }
 

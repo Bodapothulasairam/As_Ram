@@ -1,3 +1,6 @@
+#top-nav{
+    position: fixed;
+}
 html, body {
     height: 100%;
     margin: 0;
@@ -18,7 +21,23 @@ mat-drawer-container {
     display: flex;
     flex-direction: column;
 }
-
+.example-sidenav{
+    background-color: rgb(255, 255, 255);
+    margin-top: 8vh;
+    color: rgb(0, 0, 0);
+}
+.example-sidenav p{
+    padding: 3vh;
+    margin-bottom: 0px;
+    transition: top easy 2s;
+}
+.example-sidenav p:hover{
+    z-index: 1;
+    background-color: #f3f3f3;
+    color: rgb(58, 130, 255);
+    border-radius: 8px;
+    box-shadow: 0 0 4vh black;
+}
 .example-sidenav-content {
     flex: 1;
     display: flex;
