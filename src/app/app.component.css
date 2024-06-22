@@ -16,6 +16,13 @@ html, body {
     flex-direction: column;
 }
 
+.example-sidenav-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 64px; 
+    box-sizing: border-box;
+}
 mat-drawer-container {
     flex: 1; 
     display: flex;
@@ -25,30 +32,28 @@ mat-drawer-container {
     background-color: rgb(255, 255, 255);
     margin-top: 8vh;
     color: rgb(0, 0, 0);
+    z-index: 5;
+    box-shadow: 1px 0 0 rgb(160, 159, 159);
 }
-.example-sidenav p{
+.example-sidenav ul{
     padding: 3vh;
     margin-bottom: 0px;
     transition: top easy 2s;
 }
-.example-sidenav p:hover{
+.example-sidenav ul:hover{
     z-index: 1;
     background-color: #f3f3f3;
     color: rgb(58, 130, 255);
     border-radius: 8px;
     box-shadow: 0 0 4vh black;
 }
-.example-sidenav-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding-top: 64px; 
-    box-sizing: border-box;
-}
 
 .app-footer {
     flex-shrink: 0;
     height: 50px; 
-    background-color: #f1f1f1; 
+    background-color: #ffffff; 
     text-align: center; 
+    z-index: 1;
+    box-shadow: 0 0 4vh black;
+    justify-content: center;
 }

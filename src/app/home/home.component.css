@@ -16,6 +16,15 @@
     display: flex;
     height: 100%;
 }
+.Discription{
+    padding-top: 4vh;
+}
+.merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-size: 5vh;
+    font-weight: 700;
+    font-style: normal;
+  }
 
 .image-section {
     flex: 0 0 40%; /* This will make sure your image section takes up 40% of the container's width */
