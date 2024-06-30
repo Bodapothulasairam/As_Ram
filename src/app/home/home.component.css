@@ -52,3 +52,8 @@
         width: 100%; /* Elements will take up the full width of the container */
     }
 }
+p{
+    font-family: verdana;
+    font-weight: 500;
+    text-align: justify;
+}
