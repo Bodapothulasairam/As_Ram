@@ -1,14 +1,24 @@
-<mat-toolbar class="mat-elevation-z5">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSideNav()" data-toggle="collapse" data-target="#sideNavbar">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <img src="../../../assets/Images/Logo.png" class="logo" alt="Logo">
-    <span class="playfair-display-Title">AS_Ram</span>
-    <!-- <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button> -->
+<mat-toolbar>
+    <span class="rubik-wet-paint-regular">Sairam Bodapothula</span>
+    <span class="example-spacer"></span>
+    <nav>
+        <ul>
+            <li class="end-nav">Home</li>
+            <li class="end-nav">About</li>
+            <li class="end-nav">Projects</li>
+            <li class="end-nav">Skills</li>
+            <li class="end-nav">Contact</li>
+            <img *ngIf="showImage==false" src="assets/Images/menu_icon.png" type="png"alt="Menu Icon" class="menu-icon" (click)="toggleNav()">
+            <img *ngIf="showImage" src="assets/Images/close_icon.png" type="png" alt="Close" (click)="toggleNav()" id="close-icon">
+        </ul>
+    </nav>
 </mat-toolbar>
+<div class="side-nav" id="sideNav">
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Skills</li>
+        <li>Contact</li>
+    </ul>
+</div>
