@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { NavbarComponent } from "../Common/navbar/navbar.component";
 
@@ -12,5 +12,7 @@ import { NavbarComponent } from "../Common/navbar/navbar.component";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  constructor() {
+  }
   
 }

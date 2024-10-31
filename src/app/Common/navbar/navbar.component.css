@@ -1,8 +1,8 @@
 .example-spacer {
     flex: 1 1 auto;
-  }
+}
 
-mat-toolbar{
+mat-toolbar {
     background-color: rgb(25, 44, 81);
     border-bottom: 1px solid black;
     color: white;
@@ -13,52 +13,67 @@ mat-toolbar{
     position: relative;
     z-index: 10;
 }
+
 .rubik-wet-paint-regular {
     font-family: "Rubik Wet Paint", system-ui;
     font-weight: 400;
     font-style: normal;
     font-size: 180%;
 }
-.end-nav{
+
+.main-nav {
+    width: 100%;
+    align-content: end;
+}
+
+.main-nav ul {
+    float: inline-end;
+}
+
+.end-nav {
     margin: 1rem 2rem 0rem 0rem;
+    width: 4rem;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
     display: inline-flex;
 }
 
-.end-nav:hover{
+.end-nav:hover {
     color: rgb(68, 166, 252);
     transition-duration: 550ms;
     font-size: 110%;
+    cursor: pointer;
 }
 
 .material-symbols-outlined {
     display: none;
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
-.menu-icon{
+
+.menu-icon {
     display: none;
 }
-#close-icon{
+
+#close-icon {
     display: none;
 }
+
 .side-nav {
     position: fixed;
     margin-top: 4rem;
-    top: -250px; /* Hide off-screen */
+    top: -250px;
     width: 100%;
     height: 30%;
     background-color: rgb(25, 44, 81);
     color: white;
     transition: top 0.5s ease;
-    padding-left: 1rem;
     display: flex;
-    z-index:-1;
+    z-index: 1;
     flex-direction: column;
 }
 
@@ -68,48 +83,75 @@ mat-toolbar{
     padding: 0;
     margin: 0;
 }
-  
+
 .side-nav ul li {
     width: 100%;
     font-size: 20px;
     padding: 0.5rem 1rem;
-    cursor:pointer;
     text-align: left;
     margin: 0.5rem 0;
-  }
-.side-nav ul li:hover{
-    color:rgb(68, 166, 252);
-    background-color: antiquewhite;
 }
+
+.side-nav ul li:hover{
+    background-color: rgb(68, 166, 252);
+    color: white;
+}
+
 .side-nav.active {
     top: 0;
 }
-@media(min-width: 925px){
+@media(min-width: 935px) {
     .side-nav {
         top: -250px;
         display: none;
     }
 }
-@media(max-width: 925px){
+
+@media(max-width: 934px) {
+    mat-toolbar {
+        background-color: rgb(25, 44, 81);
+        border-bottom: 1px solid black;
+        color: white;
+        font-style: Lato;
+        padding: 2%;
+        padding-right: 0px;
+        display: flex;
+        position: relative;
+        z-index: 10;
+    }
+
     .rubik-wet-paint-regular {
         font-family: "Rubik Wet Paint", system-ui;
         font-weight: 400;
         font-style: normal;
-        font-size: 95%;
+        font-size: 90%;
     }
-    .end-nav{
+
+    .main-nav {
+        width: 100%;
+        align-content: end;
+    }
+
+    .main-nav ul {
+        float: inline-end;
+    }
+
+    .end-nav {
         display: none;
     }
-    .menu-icon{
+
+    .material-symbols-outlined,
+    #close-icon,
+    .menu-icon {
         display: flex;
-        width: 35%;
-        height: 35%;
+        width: 2rem;
+        height: 2rem;
         margin-top: 1rem;
+        margin-right: 1rem;
     }
-    .material-symbols-outlined,#close-icon{
-        display:flex;
-        width: 45%;
-        height: 45%;
-        margin-top: 2rem;
+
+    .main-nav nav ul {
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
 }

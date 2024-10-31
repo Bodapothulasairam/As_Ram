@@ -21,7 +21,6 @@ export class NavbarComponent {
     if (sideNav) {
       sideNav.classList.toggle('active');
       this.showImage = !this.showImage;
-      console.log(this.showImage);
     }
   }
 }

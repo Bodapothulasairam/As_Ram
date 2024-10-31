@@ -1,17 +1,19 @@
 <mat-toolbar>
     <span class="rubik-wet-paint-regular">Sairam Bodapothula</span>
-    <span class="example-spacer"></span>
-    <nav>
-        <ul>
-            <li class="end-nav">Home</li>
-            <li class="end-nav">About</li>
-            <li class="end-nav">Projects</li>
-            <li class="end-nav">Skills</li>
-            <li class="end-nav">Contact</li>
-            <img *ngIf="showImage==false" src="assets/Images/menu_icon.png" type="png"alt="Menu Icon" class="menu-icon" (click)="toggleNav()">
-            <img *ngIf="showImage" src="assets/Images/close_icon.png" type="png" alt="Close" (click)="toggleNav()" id="close-icon">
-        </ul>
-    </nav>
+    <!-- <span class="example-spacer"></span> -->
+     <div class="main-nav">
+        <nav>
+            <ul>
+                <li class="end-nav">Home</li>
+                <li class="end-nav">About</li>
+                <li class="end-nav">Projects</li>
+                <li class="end-nav">Skills</li>
+                <li class="end-nav">Contact</li>
+                <img *ngIf="showImage==false" src="assets/Images/menu_icon.png" type="png"alt="Menu Icon" class="menu-icon" (click)="toggleNav()">
+                <img *ngIf="showImage" src="assets/Images/close_icon.png" type="png" alt="Close" (click)="toggleNav()" id="close-icon">
+            </ul>
+        </nav>
+     </div>
 </mat-toolbar>
 <div class="side-nav" id="sideNav">
     <ul>
