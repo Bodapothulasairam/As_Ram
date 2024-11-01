@@ -52,4 +52,11 @@ mat-card-content p{
         width: 100%;
         text-align: center;
     }
+    .poppins-medium {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 27px;
+        font-style: normal;
+        padding-bottom: 1rem;
+      }
 }
