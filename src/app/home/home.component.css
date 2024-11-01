@@ -1,0 +1,50 @@
+* {
+    z-index: -1;
+}
+
+.first-section {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10% 12%;
+    align-items: center;
+    float: inline-start;
+}
+
+.second-section {
+    text-align: center;
+    margin-top: 7%;
+    width: 30%;
+    float: inline-end;
+}
+
+.second-section span img {
+    width: 75%;
+    height: 75%;
+}
+
+.example-card {
+    max-width: 85%;
+    background-color: rgb(25, 44, 81);
+    color: white;
+  }
+  
+  .example-card-footer {
+    padding: 16px;
+  }
+  .hover-raise:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+  }
+  
+@media(max-width: 934px) {
+    .first-section {
+        width: 100%;
+        text-align: justify;
+        margin: 0 auto;
+    }
+
+    .second-section {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -65,7 +65,6 @@ mat-toolbar {
 
 .side-nav {
     position: fixed;
-    margin-top: 4rem;
     top: -250px;
     width: 100%;
     height: 30%;
@@ -98,7 +97,7 @@ mat-toolbar {
 }
 
 .side-nav.active {
-    top: 0;
+    top: 3rem;
 }
 @media(min-width: 935px) {
     .side-nav {
