@@ -17,11 +17,7 @@ export class HomeComponent {
   greetingText: string = "Hi, Myself";
   Name: string = "Sairam Bodapothula";
   designation: string = "And I'm a Full-stack Developer";
-  overview = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde dolores molestiae quis nisi animi aliquam quia possimus quaerat. Obcaecati modi sequi voluptate dignissimos suscipit, voluptas dolorem totam aut minus aliquam! Quae asperiores corporis magni perferendis."
-  longText = `The Chihuahua is a Mexican breed of toy dog. It is named for the
-  Mexican state of Chihuahua and is among the smallest of all dog breeds. It is
-  usually kept as a companion animal or for showing.`;
-  
+  overview = "Experienced Software Engineer with 1+ years of expertise in the Software Development Life Cycle, from design to deployment. Certified in Oracle Java SE 8, Microsoft Azure, and DevOps, skilled in Java, C++, Spring Boot, and Angular. Proficient in creating scalable cloud solutions, microservices, and CI/CD pipelines, with a focus on performance and security. Collaborative team player with strong problem-solving skills and experience mentoring junior developers."
   openSocial(socialmedia: any) {
     if (socialmedia == "Linkedin") {
       window.open('https://www.linkedin.com/in/sairam-bodapothula/', '_blank');
