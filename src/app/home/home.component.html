@@ -1,16 +1,14 @@
 `<div class="first-section">
-  <mat-card class="example-card mat-elevation-z4 hover-raise" appearance="outlined">
+  <mat-card class="example-card mat-elevation-z4" appearance="outlined">
     <mat-card-content>
-      <p>{{greetingText}}</p>
-      <p>{{Name}}</p>
-      <p>{{overview}}</p>
+      <p style="font-size: 26px;">{{greetingText}}</p>
+      <p class="poppins-medium">{{Name}}</p>
+      <p style="font-size: 18px; text-align: justify;">{{overview}}</p>
     </mat-card-content>
     <mat-card-footer class="example-card-footer">
-      <mat-chip-set aria-label="Chihuahua traits">
-        <button mat-raised-button><i class="fa-brands fa-linkedin"></i></button>
-        <button mat-raised-button><i class="fa-regular fa-envelope"></i></button>
-        <button mat-raised-button><i class="fa-brands fa-instagram"></i></button>
-      </mat-chip-set>
+        <button mat-raised-button (click)="openSocial('Linkedin')"><i class="fa-brands fa-linkedin"></i></button>
+        <button mat-raised-button (click)="openSocial('Github')"><i class="fa-brands fa-github"></i></button>
+        <button mat-raised-button (click)="openSocial('Instagram')"><i class="fa-brands fa-instagram"></i></button>
     </mat-card-footer>
   </mat-card>
 </div>

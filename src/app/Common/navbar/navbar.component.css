@@ -3,7 +3,7 @@
 }
 
 mat-toolbar {
-    background-color: rgb(25, 44, 81);
+    background-color: rgb(23, 31, 54);
     border-bottom: 1px solid black;
     color: white;
     font-style: Lato;
@@ -34,7 +34,7 @@ mat-toolbar {
     margin: 1rem 2rem 0rem 0rem;
     width: 4rem;
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
     display: inline-flex;
 }
@@ -65,15 +65,16 @@ mat-toolbar {
 
 .side-nav {
     position: fixed;
-    top: -250px;
+    top: -350px;
     width: 100%;
-    height: 30%;
-    background-color: rgb(25, 44, 81);
+    height: 35%;
+    background-color: rgb(23, 31, 54);
     color: white;
     transition: top 0.5s ease;
     display: flex;
-    z-index: 1;
+    z-index: 4;
     flex-direction: column;
+    border-bottom: 1px solid rgb(22, 22, 22);
 }
 
 .side-nav ul {
@@ -101,14 +102,14 @@ mat-toolbar {
 }
 @media(min-width: 935px) {
     .side-nav {
-        top: -250px;
+        top: -350px;
         display: none;
     }
 }
 
 @media(max-width: 934px) {
     mat-toolbar {
-        background-color: rgb(25, 44, 81);
+        background-color: rgb(23, 31, 54);
         border-bottom: 1px solid black;
         color: white;
         font-style: Lato;
