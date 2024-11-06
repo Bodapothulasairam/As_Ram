@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./Common/navbar/navbar.component";
 import { FooterComponent } from "./Common/footer/footer.component";
 import { MatButtonModule } from '@angular/material/button';
@@ -12,19 +12,10 @@ import { SharedServicesService } from './shared-services.service';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent,
-      MatSidenavModule, MatButtonModule
-    ]
+    imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent,MatSidenavModule, MatButtonModule, RouterModule]
 })
 export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
-  @ViewChild('drawer') drawer!: MatDrawer;
   constructor(private sideNavService: SharedServicesService) {}
   ngOnInit() {
-    this.sideNavService.toggleSideNav$.subscribe(() => {
-      this.drawer.toggle();
-    });
   }
 }

@@ -3,12 +3,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule, MatChipsModule, MatProgressBarModule, MatButtonModule],
+  imports: [MatCardModule, MatChipsModule, MatProgressBarModule, MatButtonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

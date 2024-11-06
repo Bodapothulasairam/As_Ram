@@ -1,3 +1,26 @@
-mat-grid-tile {
-    background: lightblue;
-}  
+.skills-section {
+    text-align: left;
+    padding: 20px;
+    background-color: rgb(23, 31, 54);
+    color: rgb(229, 229, 229);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.skill-card {
+    width: 45%;
+  min-width: 300px;
+    transition: transform 0.3s;
+    background-color: rgb(27, 36, 62);
+    color: rgb(229, 229, 229);
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+

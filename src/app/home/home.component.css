@@ -31,7 +31,7 @@ mat-card-content p{
 .example-card {
     max-width: 95%;
     background-color: rgb(23, 31, 54);
-    color: white;
+    color: rgb(229, 229, 229);
     padding: 1rem;
     border-radius: 2rem;
     border-bottom: 2px solid rgb(16, 16, 16);

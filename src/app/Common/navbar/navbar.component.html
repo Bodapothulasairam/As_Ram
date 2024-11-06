@@ -1,26 +1,28 @@
 <mat-toolbar>
-    <span class="rubik-wet-paint-regular">Sairam Bodapothula</span>
+    <span class="headland-one-regular">Sairam Bodapothula</span>
     <!-- <span class="example-spacer"></span> -->
-     <div class="main-nav">
+    <div class="main-nav">
         <nav>
             <ul>
-                <li class="end-nav">Home</li>
-                <li class="end-nav">About</li>
-                <li class="end-nav">Projects</li>
-                <li class="end-nav" style="margin: 0px 16px;">Skills</li>
-                <li class="end-nav">Contact</li>
-                <img *ngIf="showImage==false" src="assets/Images/menu_icon.png" type="png"alt="Menu Icon" class="menu-icon" (click)="toggleNav()">
-                <img *ngIf="showImage" src="assets/Images/close_icon.png" type="png" alt="Close" (click)="toggleNav()" id="close-icon">
+                <li class="end-nav" routerLink="" routerLinkActive="active">Home</li>
+                <li class="end-nav" routerLink="about" routerLinkActive="active">About</li>
+                <li class="end-nav" routerLink="project" routerLinkActive="active">Projects</li>
+                <li class="end-nav" style="margin: 0px 16px;" routerLink="skills" routerLinkActive="active">Skills</li>
+                <li class="end-nav" routerLink="contact" routerLinkActive="active">Contact</li>
+                <img *ngIf="showImage==false" src="assets/Images/menu_icon.png" type="png" alt="Menu Icon"
+                    class="menu-icon" (click)="toggleNav()">
+                <img *ngIf="showImage" src="assets/Images/close_icon.png" type="png" alt="Close" (click)="toggleNav()"
+                    id="close-icon">
             </ul>
         </nav>
-     </div>
+    </div>
 </mat-toolbar>
 <div class="side-nav" id="sideNav">
     <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Skills</li>
-        <li>Contact</li>
+        <li routerLink="" routerLinkActive="active">Home</li>
+        <li routerLink="about" routerLinkActive="active">About</li>
+        <li routerLink="project" routerLinkActive="active">Projects</li>
+        <li routerLink="skills" routerLinkActive="activebutton">Skills</li>
+        <li routerLink="contact" routerLinkActive="active">Contact</li>
     </ul>
 </div>

@@ -5,7 +5,7 @@
 mat-toolbar {
     background-color: rgb(23, 31, 54);
     border-bottom: 1px solid black;
-    color: white;
+    color: rgb(229, 229, 229);
     font-style: Lato;
     padding: 3%;
     padding-right: 0px;
@@ -14,11 +14,11 @@ mat-toolbar {
     z-index: 10;
 }
 
-.rubik-wet-paint-regular {
-    font-family: "Rubik Wet Paint", system-ui;
-    font-weight: 400;
+.headland-one-regular {
+    font-family: "Headland One", serif;
+    font-weight: 800;
     font-style: normal;
-    font-size: 180%;
+    font-size: 200%;
 }
 
 .main-nav {
@@ -69,7 +69,7 @@ mat-toolbar {
     width: 100%;
     height: 35%;
     background-color: rgb(23, 31, 54);
-    color: white;
+    color: rgb(229, 229, 229);
     transition: top 0.5s ease;
     display: flex;
     z-index: 4;
@@ -94,7 +94,7 @@ mat-toolbar {
 
 .side-nav ul li:hover{
     background-color: rgb(68, 166, 252);
-    color: white;
+    color: rgb(229, 229, 229);
 }
 
 .side-nav.active {
@@ -111,7 +111,7 @@ mat-toolbar {
     mat-toolbar {
         background-color: rgb(23, 31, 54);
         border-bottom: 1px solid black;
-        color: white;
+        color: rgb(229, 229, 229);
         font-style: Lato;
         padding: 2%;
         padding-right: 0px;
@@ -120,9 +120,9 @@ mat-toolbar {
         z-index: 10;
     }
 
-    .rubik-wet-paint-regular {
-        font-family: "Rubik Wet Paint", system-ui;
-        font-weight: 400;
+    .headland-one-regular {
+        font-family: "Headland One", serif;
+        font-weight: 800;
         font-style: normal;
         font-size: 90%;
     }
