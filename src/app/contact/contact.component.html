@@ -1,1 +1,56 @@
-<p>contact works!</p>
+<section id="contact">
+    <div class="contact-container">
+        <mat-card>
+            <h2>Contact Me</h2>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName" required>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName" required>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" type="email" required>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Purpose of Contact</mat-label>
+                    <textarea matInput formControlName="purpose"></textarea>
+                </mat-form-field>
+    
+                <div class="checkbox-field full-width">
+                    <mat-checkbox formControlName="scheduleMeeting">Would you like to schedule a meeting?</mat-checkbox>
+                </div>
+    
+                <!-- Meeting details fields, only visible if the checkbox is selected -->
+                <div *ngIf="contactForm.get('scheduleMeeting')?.value">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Preferred Date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="meetingDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Preferred Time</mat-label>
+                        <input matInput type="time" formControlName="meetingTime" required>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Time Zone</mat-label>
+                        <mat-select formControlName="timeZone" required>
+                            <mat-option *ngFor="let zone of timeZones" [value]="zone">{{ zone }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+    
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+            </form>
+        </mat-card>
+    </div>
+</section>

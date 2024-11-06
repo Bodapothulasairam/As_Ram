@@ -1,8 +1,16 @@
-.skills-section {
+h2 {
     text-align: left;
-    padding: 20px;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: rgb(229, 229, 229);
+}
+
+.skills-section {
+    text-align: center;
+    padding: 50px;
     background-color: rgb(23, 31, 54);
     color: rgb(229, 229, 229);
+    font-family: Arial, sans-serif;
 }
 
 .skills-container {
@@ -14,13 +22,31 @@
 
 .skill-card {
     width: 45%;
-  min-width: 300px;
-    transition: transform 0.3s;
+    min-width: 300px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
     background-color: rgb(27, 36, 62);
     color: rgb(229, 229, 229);
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 
 .skill-card:hover {
     transform: scale(1.05);
 }
 
+.individual-skill {
+    margin-bottom: 12px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 4px;
+}
+
+.mat-progress-bar {
+    height: 6px;
+}
