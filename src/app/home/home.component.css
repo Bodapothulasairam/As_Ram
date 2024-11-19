@@ -19,8 +19,13 @@ mat-card-content p{
     width: 75%;
     height: 75%;
     border-bottom: 4px solid rgb(16, 16, 16);
-    border-left: 4px solid rgb(16, 16, 16);;
+    border-left: 4px solid rgb(16, 16, 16);
+    transition: transform 0.3s;
     border-radius: 30rem;
+}
+
+.second-section span img:hover{
+  transform: scale(1.05);
 }
 .poppins-medium {
     font-family: "Poppins", sans-serif;
@@ -33,10 +38,15 @@ mat-card-content p{
     background-color: rgb(23, 31, 54);
     color: rgb(229, 229, 229);
     padding: 1rem;
+    transition: transform 0.3s;
     border-radius: 2rem;
     border-bottom: 2px solid rgb(16, 16, 16);
     border-left: 2px solid rgb(16, 16, 16);;
   }
+
+.example-card:hover{
+  transform: scale(1.05);
+}
   
   .example-card-footer {
     padding: 16px;
