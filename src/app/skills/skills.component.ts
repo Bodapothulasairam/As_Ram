@@ -20,7 +20,8 @@ export class SkillsComponent {
         { name: 'C++', level: 80 },
         { name: 'Spring Boot', level: 95 },
         { name: 'Angular', level: 90 },
-        { name: 'Microsoft Azure', level: 85 }
+        { name: 'Microsoft Azure', level: 82 },
+        { name: 'My_SQL', level: 85 }
       ]
     },
     {
@@ -47,8 +48,7 @@ export class SkillsComponent {
         { name: 'Angular', level: 90 },
         { name: 'Spring Boot', level: 95 },
         { name: 'HTML', level: 95 },
-        { name: 'CSS', level: 90 },
-        { name: 'SQL', level: 78 }
+        { name: 'CSS', level: 90 }
       ]
     },
     {
