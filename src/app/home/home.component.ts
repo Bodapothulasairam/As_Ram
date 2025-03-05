@@ -28,7 +28,7 @@ export class HomeComponent {
     }
     else if(socialmedia == "Instagram")
     {
-      window.open('https://www.instagram.com/sairamchowdary687/', '_blank');
+      window.open('https://www.instagram.com/ram_the_only_1/', '_blank');
     }
   }
 }
