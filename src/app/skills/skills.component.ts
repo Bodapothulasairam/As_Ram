@@ -16,36 +16,36 @@ export class SkillsComponent {
     {
       title: 'Core Technologies',
       skills: [
-        { name: 'Java', level: 90 },
+        { name: 'Java', level: 95 },
         { name: 'C++', level: 80 },
-        { name: 'Spring Boot', level: 85 },
-        { name: 'Angular', level: 88 },
-        { name: 'Microsoft Azure', level: 75 }
+        { name: 'Spring Boot', level: 95 },
+        { name: 'Angular', level: 90 },
+        { name: 'Microsoft Azure', level: 85 }
       ]
     },
     {
       title: 'Programming and Data Structures',
       skills: [
         { name: 'Algorithms', level: 92 },
-        { name: 'Design Patterns', level: 85 },
-        { name: 'Multithreading', level: 80 },
-        { name: 'Event Handling', level: 78 },
-        { name: 'Exception Handling', level: 82 }
+        { name: 'Design Patterns', level: 90 },
+        { name: 'Multithreading', level: 85 },
+        { name: 'Event Handling', level: 88 },
+        { name: 'Exception Handling', level: 95 }
       ]
     },
     {
       title: 'Cloud and DevOps',
       skills: [
-        { name: 'Azure', level: 80 },
-        { name: 'CI/CD', level: 85 },
-        { name: 'DevOps practices', level: 88 }
+        { name: 'Azure', level: 90 },
+        { name: 'CI/CD', level: 90 },
+        { name: 'DevOps practices', level: 90 }
       ]
     },
     {
       title: 'Frontend and Backend Frameworks',
       skills: [
-        { name: 'Angular', level: 88 },
-        { name: 'Spring Boot', level: 85 },
+        { name: 'Angular', level: 90 },
+        { name: 'Spring Boot', level: 95 },
         { name: 'HTML', level: 95 },
         { name: 'CSS', level: 90 },
         { name: 'SQL', level: 78 }
