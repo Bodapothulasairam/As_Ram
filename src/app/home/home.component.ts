@@ -3,17 +3,21 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule, Router } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule, MatChipsModule, MatProgressBarModule, MatButtonModule, CommonModule],
+  imports: [MatCardModule, MatChipsModule, MatProgressBarModule, MatButtonModule, RouterModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router
+  ) {}
 
   // Personal Information
   greetingText: string = "👋 Hello, I'm";
@@ -40,23 +44,25 @@ export class HomeComponent implements OnInit, AfterViewInit {
   
   // Stats
   stats = [
-    { label: "Years Experience", value: "5+", icon: "" },
+    { label: "Years Experience", value: "1+", icon: "" },
     { label: "Projects Completed", value: "10+", icon: "" },
     { label: "Technologies", value: "15+", icon: "⚡" },
     { label: "Certifications", value: "3", icon: "🏆" }
   ];
   
   // Enhanced overview
-  overview = "Passionate Software Engineer with 5+ years of expertise in full-stack development, cloud solutions, and DevOps practices. Certified in Oracle Java SE 8, Microsoft Azure, and DevOps. I specialize in creating scalable, secure applications and mentoring teams to deliver innovative solutions.";
+  overview = "Passionate Software Engineer with 1+ years of expertise in full-stack development, cloud solutions, and DevOps practices. Certified in Oracle Java SE 8, Microsoft Azure, and DevOps. I specialize in creating scalable, secure applications and mentoring teams to deliver innovative solutions.";
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.startTypingAnimation();
+      this.setupScrollListener();
     }
   }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
+      // Add scroll animations
       this.addScrollAnimations();
     }
   }
@@ -94,8 +100,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
     type();
   }
 
+  setupScrollListener() {
+    if (!isPlatformBrowser(this.platformId)) return;
+    
+    let scrollTimeout: any;
+    
+    window.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // If user scrolls to the bottom of the page (within 100px)
+        if (scrollPosition + windowHeight >= documentHeight - 100) {
+          this.navigateToAbout();
+        }
+      }, 150);
+    });
+  }
+
   addScrollAnimations() {
     if (!isPlatformBrowser(this.platformId) || typeof IntersectionObserver === 'undefined') {
+      // Fallback: add animation class immediately if IntersectionObserver is not available
       setTimeout(() => {
         if (isPlatformBrowser(this.platformId)) {
           document.querySelectorAll('.animate-on-scroll').forEach(el => {
@@ -122,12 +149,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  scrollToProjects() {
+  navigateToAbout() {
     if (!isPlatformBrowser(this.platformId)) return;
     
-    // Scroll to projects section (3 sections down)
-    window.scrollBy({ top: window.innerHeight * 3, behavior: 'smooth' });
+    // Add a smooth transition effect
+    document.body.style.transition = 'opacity 0.3s ease-out';
+    document.body.style.opacity = '0.8';
+    
+    setTimeout(() => {
+      this.router.navigate(['/about']);
+    }, 300);
   }
+
 
   openSocial(platform: string) {
     if (!isPlatformBrowser(this.platformId)) return;
@@ -143,9 +176,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (urls[platform as keyof typeof urls]) {
       window.open(urls[platform as keyof typeof urls], '_blank');
     }
-    else if(socialmedia == "Instagram")
-    {
-      window.open('https://www.instagram.com/sairamchowdary687/', '_blank');
+  }
+  scrollToSection(section: string) {
+    if (!isPlatformBrowser(this.platformId)) return;
+    
+    const sectionElement = document.getElementById(section);
+    if (sectionElement) {
+      const targetY = sectionElement.offsetTop - 70; // Account for fixed navbar
+      window.scrollTo({
+        top: targetY,
+        behavior: 'smooth'
+      });
     }
+  }
+
+  downloadResume() {
+    if (!isPlatformBrowser(this.platformId)) return;
+    
+    // Implement resume download logic
+    const link = document.createElement('a');
+    link.href = 'assets/resume/Sairam_Bodapothula.docx';
+    link.download = 'Sairam_Bodapothula.docx';
+    link.click();
   }
 }

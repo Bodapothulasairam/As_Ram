@@ -89,7 +89,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     
     const sectionElement = document.getElementById(section);
     if (sectionElement) {
-      const targetY = sectionElement.offsetTop - 70; // Account for fixed navbar
+      const targetY = sectionElement.offsetTop - 50; // Account for fixed navbar
       window.scrollTo({
         top: targetY,
         behavior: 'smooth'
