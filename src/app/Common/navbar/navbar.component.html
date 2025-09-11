@@ -1,28 +1,65 @@
-<mat-toolbar>
-    <span class="headland-one-regular">Sairam Bodapothula</span>
-    <!-- <span class="example-spacer"></span> -->
-    <div class="main-nav">
-        <nav>
-            <ul>
-                <li class="end-nav" routerLink="" routerLinkActive="active">Home</li>
-                <li class="end-nav" routerLink="about" routerLinkActive="active">About</li>
-                <!-- <li class="end-nav" routerLink="project" routerLinkActive="active">Projects</li> -->
-                <li class="end-nav" style="margin: 0px 16px;" routerLink="skills" routerLinkActive="active">Skills</li>
-                <li class="end-nav" routerLink="contact" routerLinkActive="active">Contact</li>
-                <img *ngIf="showImage==false" src="assets/Images/menu_icon.png" type="png" alt="Menu Icon"
-                    class="menu-icon" (click)="toggleNav()">
-                <img *ngIf="showImage" src="assets/Images/close_icon.png" type="png" alt="Close" (click)="toggleNav()"
-                    id="close-icon">
-            </ul>
-        </nav>
+<nav class="modern-navbar">
+    <div class="navbar-container">
+      <!-- Brand/Logo -->
+      <div class="navbar-brand" (click)="navigateToSection('home')">
+        <span class="brand-text">Sairam</span>
+        <span class="brand-accent">Bodapothula</span>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="navbar-nav">
+        <a 
+          href="#home" 
+          class="nav-link" 
+          [class.active]="activeSection === 'home'"
+          (click)="navigateToSection('home')"
+        >
+          <span class="nav-text">Home</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a 
+          href="#about" 
+          class="nav-link" 
+          [class.active]="activeSection === 'about'"
+          (click)="navigateToSection('about')"
+        >
+          <span class="nav-text">About</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a 
+          href="#skills" 
+          class="nav-link" 
+          [class.active]="activeSection === 'skills'"
+          (click)="navigateToSection('skills')"
+        >
+          <span class="nav-text">Skills</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a 
+          href="#projects" 
+          class="nav-link" 
+          [class.active]="activeSection === 'projects'"
+          (click)="navigateToSection('projects')"
+        >
+          <span class="nav-text">Projects</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a 
+          href="#contact" 
+          class="nav-link" 
+          [class.active]="activeSection === 'contact'"
+          (click)="navigateToSection('contact')"
+        >
+          <span class="nav-text">Contact</span>
+          <span class="nav-indicator"></span>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
-</mat-toolbar>
-<div class="side-nav" id="sideNav">
-    <ul>
-        <li routerLink="" routerLinkActive="active">Home</li>
-        <li routerLink="about" routerLinkActive="active">About</li>
-        <!-- <li routerLink="project" routerLinkActive="active">Projects</li> -->
-        <li routerLink="skills" routerLinkActive="activebutton">Skills</li>
-        <li routerLink="contact" routerLinkActive="active">Contact</li>
-    </ul>
-</div>
+  </nav>

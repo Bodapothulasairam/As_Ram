@@ -1,48 +1,91 @@
-<section id="about">
-    <div class="about-container">
-      <h2>About Me</h2>
-      <p class="intro">
-        I’m a passionate Software Engineer with over 1 year of experience in full-stack development, cloud solutions, and DevOps practices. My goal is to create efficient, scalable solutions through a combination of robust technical skills and innovative problem-solving.
-      </p>
-  
-      <mat-card class="about-card">
-        <mat-card-title>Core Skills and Technologies</mat-card-title>
-        <mat-card-content>
-          Proficient in Java, C++, Spring Boot, Angular, and Microsoft Azure. Solid understanding of data structures, design patterns, and CI/CD pipeline integration.
-        </mat-card-content>
-      </mat-card>
-  
-      <mat-card class="about-card">
-        <mat-card-title>Certifications and Achievements</mat-card-title>
-        <mat-card-content>
-          <ul>
-            <li>Oracle Java SE 8 Programmer Associate</li>
-            <li>Microsoft Azure Administrator Associate</li>
-            <li>DevOps Engineer Expert</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-  
-      <mat-card class="about-card">
-        <mat-card-title>Experience and Projects</mat-card-title>
-        <mat-card-content>
-          Designed and deployed scalable applications, migrated legacy systems, implemented cloud-based solutions, and developed responsive web applications using Angular and Spring Boot.
-        </mat-card-content>
-      </mat-card>
-  
-      <mat-card class="about-card">
-        <mat-card-title>Strengths and Working Style</mat-card-title>
-        <mat-card-content>
-          Known for strong problem-solving skills and a collaborative approach, I enjoy mentoring junior team members and working with cross-functional teams to tackle complex technical challenges.
-        </mat-card-content>
-      </mat-card>
-  
-      <mat-card class="about-card">
-        <mat-card-title>Future Goals</mat-card-title>
-        <mat-card-content>
-          I’m committed to continuously enhancing my skills and contributing to impactful projects that drive innovation and solve real-world problems.
-        </mat-card-content>
-      </mat-card>
+<section id="about" class="about-section">
+  <div class="about-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fas fa-user"></i>
+        <span>About</span>
+      </div>
+      <h2 class="section-title">
+        About <span class="text-gradient">Me</span>
+      </h2>
     </div>
-  </section>
+
+    <!-- Main About Content -->
+    <div class="about-main">
+      <!-- Left Side - Profile Image -->
+      <div class="profile-image-container">
+        <div class="profile-image-wrapper">
+          <img src="assets/Images/Hero-image.jpeg" alt="Sairam Bodapothula" class="profile-image">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Right Side - Personal Info -->
+      <div class="personal-info">
+        <div class="intro-text">
+          <p class="greeting">Hello, and welcome to my portfolio!</p>
+          <p class="main-intro">
+            I am <strong>Sairam Bodapothula</strong>. I am a passionate Software Engineer with expertise in full-stack development and cloud solutions. I'm excited to share my portfolio with you and hope that you enjoy exploring my projects and learning more about me. Thank you for stopping by!
+          </p>
+        </div>
+
+        <div class="key-info">
+          <h3 class="info-title">Software Engineer & Full-Stack Developer</h3>
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-icon">></span>
+              <span class="info-text">Email: {{email}}</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">></span>
+              <span class="info-text">Experience: 5+ Years</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">></span>
+              <span class="info-text">Specialization: Full-Stack Development</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">></span>
+              <span class="info-text">Focus: Cloud Solutions & DevOps</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="about-actions">
+          <button class="action-btn primary" (click)="scrollToSection('projects')">
+            <i class="fas fa-folder-open"></i>
+            View My Work
+          </button>
+          <button class="action-btn secondary" (click)="scrollToSection('contact')">
+            <i class="fas fa-envelope"></i>
+            Get In Touch
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section - Personal Philosophy -->
+    <div class="philosophy-section">
+      <div class="philosophy-card">
+        <div class="philosophy-content">
+          <div class="philosophy-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="philosophy-text">
+            <h3>My Approach</h3>
+            <p>
+              I believe in creating technology solutions that make a real difference. 
+              My passion lies in building scalable applications and mentoring teams to 
+              achieve their full potential. When I'm not coding, you'll find me exploring 
+              new technologies, contributing to open-source projects, or sharing knowledge 
+              with the developer community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   

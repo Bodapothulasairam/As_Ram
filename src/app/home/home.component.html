@@ -1,19 +1,116 @@
-`<div class="first-section">
-  <mat-card class="example-card mat-elevation-z4" appearance="outlined">
-    <mat-card-content>
-      <p style="font-size: 26px;">{{greetingText}}</p>
-      <p class="poppins-medium">{{Name}}</p>
-      <p style="font-size: 18px; text-align: justify;">{{overview}}</p>
-    </mat-card-content>
-    <mat-card-footer class="example-card-footer">
-        <button mat-raised-button (click)="openSocial('Linkedin')"><i class="fa-brands fa-linkedin"></i></button>
-        <button mat-raised-button (click)="openSocial('Github')"><i class="fa-brands fa-github"></i></button>
-        <button mat-raised-button (click)="openSocial('Instagram')"><i class="fa-brands fa-instagram"></i></button>
-    </mat-card-footer>
-  </mat-card>
-</div>
-<div class="second-section">
-  <span class="my_photo">
-    <img src="assets/Images/My_photo.png" type="png" alt="My Photo">
-  </span>
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left Content -->
+      <div class="hero-content animate-on-scroll">
+        <div class="hero-badge">
+          <span class="font-mono">{{ greetingText }}</span>
+        </div>
+        
+        <h1 class="hero-title">
+          <span class="text-gradient">{{ name }}</span>
+        </h1>
+        
+        <div class="hero-subtitle">
+          <span class="typing-container">
+            <span class="font-mono">{{ currentText }}</span>
+            <span class="cursor">|</span>
+          </span>
+        </div>
+        
+        <p class="hero-description lead">
+          {{ overview }}
+        </p>
+        
+        <!-- Skills Tags -->
+        <div class="skills-tags">
+          <span 
+            *ngFor="let skill of skills; let i = index" 
+            class="skill-tag"
+            [style.animation-delay.ms]="i * 100"
+          >
+            {{ skill }}
+          </span>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <button class="btn btn-primary" (click)="scrollToProjects()">
+            <i class="fas fa-rocket"></i>
+            View My Work
+          </button>
+          <button class="btn btn-secondary" (click)="downloadResume()">
+            <i class="fas fa-download"></i>
+            Download Resume
+          </button>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+          <button 
+            *ngFor="let social of [
+              {name: 'LinkedIn', icon: 'fab fa-linkedin', platform: 'LinkedIn'},
+              {name: 'GitHub', icon: 'fab fa-github', platform: 'Github'},
+              {name: 'Twitter', icon: 'fab fa-twitter', platform: 'Twitter'},
+              {name: 'Email', icon: 'fas fa-envelope', platform: 'Email'}
+            ]" 
+            class="social-btn" 
+            (click)="openSocial(social.platform)"
+            [title]="social.name"
+          >
+            <i [class]="social.icon"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Right Content - Profile & Stats -->
+      <div class="hero-visual animate-on-scroll">
+        <div class="profile-container">
+          <div class="profile-image">
+            <img src="assets/Images/My_photo.png" alt="Sairam Bodapothula" />
+            <div class="profile-glow"></div>
+          </div>
+        </div>
+        
+        <!-- Stats and Tech Elements Container -->
+        <div class="stats-tech-container">
+          <!-- Stats Cards -->
+          <div class="stats-grid">
+            <div 
+              *ngFor="let stat of stats; let i = index" 
+              class="stat-card animate-on-scroll"
+              [style.animation-delay.ms]="(i + 1) * 200"
+            >
+              <div class="stat-icon">{{ stat.icon }}</div>
+              <div class="stat-value">{{ stat.value }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          </div>
+          
+          <!-- Floating Tech Elements - Vertical Column -->
+          <div class="floating-tech-column">
+            <div class="floating-card tech-card" [style.animation-delay.ms]="100">
+              <i class="fab fa-angular"></i>
+              <span>Angular</span>
+            </div>
+            <div class="floating-card tech-card" [style.animation-delay.ms]="300">
+              <i class="fab fa-java"></i>
+              <span>Java</span>
+            </div>
+            <div class="floating-card tech-card" [style.animation-delay.ms]="500">
+              <i class="fab fa-microsoft"></i>
+              <span>Azure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Background Elements -->
+  <div class="hero-bg">
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+  </div>
 </div>

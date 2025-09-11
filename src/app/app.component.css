@@ -1,3 +1,87 @@
-router-outlet{
-    right: 2500px;
+.portfolio-container {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.portfolio-section {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding-top: 70px; /* Account for fixed navbar */
+  padding-bottom: 0; /* Remove bottom padding to eliminate gaps */
+  margin: 0;
+}
+
+/* Remove gaps between sections */
+.portfolio-section + .portfolio-section {
+  margin-top: 0;
+  padding-top: 70px; /* Only top padding for navbar */
+  padding-bottom: 0;
+}
+
+/* Ensure no gaps between specific sections */
+#about + #skills {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#skills + #projects {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#projects + #contact {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+/* Section-specific backgrounds */
+#home {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+#about {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+#skills {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+#projects {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+#contact {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding-top: 60px; /* Adjust for smaller mobile navbar */
+  }
+  
+  html {
+    scroll-snap-type: none; /* Disable snap on mobile for better UX */
+  }
+}
+
+/* Disable scroll snap on touch devices for better mobile experience */
+@media (hover: none) and (pointer: coarse) {
+  html {
+    scroll-snap-type: none;
+  }
 }

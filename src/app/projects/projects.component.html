@@ -1,1 +1,104 @@
-<p>projects works!</p>
+<section id="projects" class="projects-section">
+  <div class="projects-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fas fa-code-branch"></i>
+        <span>Portfolio</span>
+      </div>
+      <h2 class="section-title">
+        Featured <span class="text-gradient">Projects</span>
+      </h2>
+      <p class="section-description">
+        A showcase of my diverse technical projects spanning full-stack development, 
+        big data processing, AI/ML, and system programming.
+      </p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="category-filter">
+      <button 
+        *ngFor="let category of categories"
+        class="filter-btn"
+        [class.active]="selectedCategory === category"
+        (click)="filterProjects(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div 
+        class="project-card" 
+        *ngFor="let project of filteredProjects; let i = index"
+        [style.animation-delay]="(i * 0.1) + 's'"
+      >
+        <div class="project-image">
+          <div class="project-overlay">
+            <div class="project-status" [style.background]="getStatusColor(project.status)">
+              {{ project.status | titlecase }}
+            </div>
+            <div class="project-category" [style.background]="getCategoryColor(project.category)">
+              {{ project.category }}
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li *ngFor="let feature of project.features.slice(0, 3)">{{ feature }}</li>
+            </ul>
+          </div>
+
+          <div class="project-contributions">
+            <h4>My Contributions:</h4>
+            <ul>
+              <li *ngFor="let contribution of project.contributions.slice(0, 2)">{{ contribution }}</li>
+            </ul>
+          </div>
+
+          <div class="project-impact">
+            <i class="fas fa-chart-line"></i>
+            <span>{{ project.impact }}</span>
+          </div>
+
+          <div class="project-technologies">
+            <mat-chip-set>
+              <mat-chip 
+                *ngFor="let tech of project.technologies.slice(0, 6)"
+                class="tech-chip"
+              >
+              <span style="color: white;">{{ tech }}</span>
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+
+          <div class="project-actions">
+            <button class="btn-primary" *ngIf="project.liveUrl">
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </button>
+            <button class="btn-secondary" *ngIf="project.githubUrl">
+              <i class="fab fa-github"></i>
+              View Code
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="view-more">
+      <button class="btn-outline">
+        <i class="fas fa-arrow-right"></i>
+        View All Projects
+      </button>
+    </div>
+  </div>
+</section>

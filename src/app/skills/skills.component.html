@@ -1,19 +1,62 @@
-<div class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills-container">
-        <mat-card class="skill-card" *ngFor="let category of skills">
-            <mat-card-header>
-                <mat-card-title>{{ category.title }}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <div *ngFor="let skill of category.skills" class="individual-skill">
-                    <div class="skill-info">
-                        <span>{{ skill.name }}</span>
-                        <span class="skill-level-text">{{ skill.level }}%</span>
-                    </div>
-                    <mat-progress-bar mode="determinate" [value]="skill.level" color="primary"></mat-progress-bar>
-                </div>
-            </mat-card-content>
-        </mat-card>
+<section id="skills" class="skills-section">
+  <div class="skills-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fas fa-code-branch"></i>
+        <span>Expertise</span>
+      </div>
+      <h2 class="section-title">
+        Technical <span class="text-gradient">Skills</span>
+      </h2>
+      <p class="section-description">
+        A comprehensive overview of my technical expertise across different domains, 
+        from programming languages to cloud infrastructure and DevOps practices.
+      </p>
     </div>
-</div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      <!-- Programming Languages -->
+      <div class="skill-category" *ngFor="let category of skillCategories">
+        <div class="category-header">
+          <div class="category-icon" [style.background]="category.color">
+            <i [class]="category.icon"></i>
+          </div>
+          <h3 class="category-title">{{ category.title }}</h3>
+        </div>
+        
+        <div class="skills-list">
+          <div 
+            class="skill-item" 
+            *ngFor="let skill of category.skills"
+            [style.animation-delay]="(category.skills.indexOf(skill) * 0.1) + 's'"
+          >
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-level">{{ skill.level }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div 
+                class="skill-progress" 
+                [style.width.%]="skill.level"
+                [style.background]="getSkillLevelColor(skill.level)"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Skills -->
+    <div class="additional-skills">
+      <h3 class="additional-title">Additional Competencies</h3>
+      <div class="competencies-grid">
+        <div class="competency-item" *ngFor="let competency of additionalCompetencies">
+          <i [class]="competency.icon"></i>
+          <span>{{ competency.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
