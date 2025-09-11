@@ -143,14 +143,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (urls[platform as keyof typeof urls]) {
       window.open(urls[platform as keyof typeof urls], '_blank');
     }
-  }
-
-  downloadResume() {
-    if (!isPlatformBrowser(this.platformId)) return;
-    
-    const link = document.createElement('a');
-    link.href = 'assets/resume/Sairam_Bodapothula_Resume.pdf';
-    link.download = 'Sairam_Bodapothula_Resume.pdf';
-    link.click();
+    else if(socialmedia == "Instagram")
+    {
+      window.open('https://www.instagram.com/sairamchowdary687/', '_blank');
+    }
   }
 }

@@ -60,10 +60,11 @@ export class SkillsComponent implements OnInit, AfterViewInit {
       icon: 'fas fa-database',
       color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
       skills: [
-        { name: 'PostgreSQL', level: 90, icon: 'fas fa-database', color: '#336791' },
-        { name: 'MongoDB', level: 85, icon: 'fas fa-database', color: '#47a248' },
-        { name: 'MySQL', level: 90, icon: 'fas fa-database', color: '#4479a1' },
-        { name: 'Oracle', level: 80, icon: 'fas fa-database', color: '#f80000' }
+        { name: 'Algorithms', level: 92 },
+        { name: 'Design Patterns', level: 85 },
+        { name: 'Multithreading', level: 80 },
+        { name: 'Event Handling', level: 78 },
+        { name: 'Exception Handling', level: 82 }
       ]
     },
     {
@@ -71,10 +72,9 @@ export class SkillsComponent implements OnInit, AfterViewInit {
       icon: 'fas fa-globe',
       color: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
       skills: [
-        { name: 'RESTful APIs', level: 95, icon: 'fas fa-plug', color: '#00d9ff' },
-        { name: 'GraphQL', level: 85, icon: 'fas fa-project-diagram', color: '#e10098' },
-        { name: 'SOAP', level: 80, icon: 'fas fa-exchange-alt', color: '#ff6b6b' },
-        { name: 'Kafka', level: 75, icon: 'fas fa-stream', color: '#231f20' }
+        { name: 'Azure', level: 80 },
+        { name: 'CI/CD', level: 85 },
+        { name: 'DevOps practices', level: 88 }
       ]
     },
     {
@@ -82,12 +82,11 @@ export class SkillsComponent implements OnInit, AfterViewInit {
       icon: 'fas fa-tools',
       color: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
       skills: [
-        { name: 'Git', level: 95, icon: 'fab fa-git-alt', color: '#f05032' },
-        { name: 'Docker', level: 85, icon: 'fab fa-docker', color: '#2496ed' },
-        { name: 'Jenkins', level: 80, icon: 'fas fa-cogs', color: '#d24939' },
-        { name: 'Agile/Scrum', level: 90, icon: 'fas fa-users', color: '#00d9ff' },
-        { name: 'CI/CD', level: 85, icon: 'fas fa-sync-alt', color: '#ff6b6b' },
-        { name: 'TDD', level: 85, icon: 'fas fa-vial', color: '#25a162' }
+        { name: 'Angular', level: 88 },
+        { name: 'Spring Boot', level: 85 },
+        { name: 'HTML', level: 95 },
+        { name: 'CSS', level: 90 },
+        { name: 'SQL', level: 78 }
       ]
     },
     {
