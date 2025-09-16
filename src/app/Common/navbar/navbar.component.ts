@@ -120,6 +120,10 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
     const target = event.target as HTMLElement;
