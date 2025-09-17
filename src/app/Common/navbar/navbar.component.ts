@@ -13,12 +13,14 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   activeSection: string = 'home';
   isMobileMenuOpen: boolean = false;
   isScrolled: boolean = false;
+  isNavigating: boolean = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.setupScrollListener();
+      this.handleInitialRoute();
     }
   }
 
@@ -44,35 +46,41 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     });
   }
 
-  updateActiveSection() {
+  handleInitialRoute() {
     if (!isPlatformBrowser(this.platformId)) return;
+    
+    // Check if there's a hash in the URL
+    const hash = window.location.hash.substring(1);
+    const validSections = ['home', 'about', 'skills', 'projects', 'contact'];
+    
+    if (hash && validSections.includes(hash)) {
+      // Navigate to the section specified in the hash
+      setTimeout(() => {
+        this.navigateToSection(hash);
+      }, 100);
+    } else {
+      // Default to home section
+      this.activeSection = 'home';
+    }
+  }
+
+  updateActiveSection() {
+    if (!isPlatformBrowser(this.platformId) || this.isNavigating) return;
 
     const scrollTop = window.pageYOffset;
-    const windowHeight = window.innerHeight;
-    
-    // More precise section detection
     const sections = ['home', 'about', 'skills', 'projects', 'contact'];
     let currentSection = 'home';
     
-    // Check each section with better thresholds
-    for (let i = 0; i < sections.length; i++) {
+    // Find the section that's currently in view
+    for (let i = sections.length - 1; i >= 0; i--) {
       const sectionElement = document.getElementById(sections[i]);
       if (sectionElement) {
-        const sectionTop = sectionElement.offsetTop - 100; // Account for navbar
-        const sectionBottom = sectionTop + sectionElement.offsetHeight;
+        const sectionTop = sectionElement.offsetTop - 150; // Account for navbar and some buffer
         
-        if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+        if (scrollTop >= sectionTop) {
           currentSection = sections[i];
           break;
         }
-      }
-    }
-    
-    // Fallback to simple calculation if elements not found
-    if (currentSection === 'home') {
-      const sectionIndex = Math.floor(scrollTop / (windowHeight * 0.8)); // More conservative threshold
-      if (sectionIndex >= 0 && sectionIndex < sections.length) {
-        currentSection = sections[sectionIndex];
       }
     }
     
@@ -87,33 +95,42 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   navigateToSection(section: string) {
     if (!isPlatformBrowser(this.platformId)) return;
     
+    console.log(`Navigating to section: ${section}`); // Debug log
+    
+    // Close mobile menu first
+    this.isMobileMenuOpen = false;
+    
+    // Update active section immediately
+    this.activeSection = section;
+    
     const sectionElement = document.getElementById(section);
     if (sectionElement) {
-      const targetY = sectionElement.offsetTop - 50; // Account for fixed navbar
+      const targetY = sectionElement.offsetTop - 70; // Account for fixed navbar height
+      console.log(`Scrolling to ${section} at position: ${targetY}`); // Debug log
+      
+      // Temporarily disable scroll detection to prevent interference
+      this.isNavigating = true;
+      
       window.scrollTo({
         top: targetY,
         behavior: 'smooth'
       });
       
+      // Re-enable scroll detection after navigation completes
+      setTimeout(() => {
+        this.isNavigating = false;
+      }, 1000);
+      
       // Update URL hash
       history.replaceState(null, '', `#${section}`);
     } else {
-      // Fallback to simple calculation
-      const sectionIndex = ['home', 'about', 'skills', 'projects', 'contact'].indexOf(section);
-      if (sectionIndex !== -1) {
-        const targetY = sectionIndex * window.innerHeight;
-        window.scrollTo({
-          top: targetY,
-          behavior: 'smooth'
-        });
-        
-        // Update URL hash
-        history.replaceState(null, '', `#${section}`);
-      }
+      console.error(`Section with id "${section}" not found. Available sections:`, 
+        ['home', 'about', 'skills', 'projects', 'contact'].map(id => ({
+          id,
+          element: document.getElementById(id) ? 'found' : 'not found'
+        }))
+      );
     }
-    
-    // Close mobile menu
-    this.isMobileMenuOpen = false;
   }
 
   toggleMobileMenu() {
