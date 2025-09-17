@@ -82,8 +82,8 @@
 
 .profile-image-wrapper {
   position: relative;
-  width: 350px; /* Slightly smaller for better balance */
-  height: 350px;
+  width: 450px; /* Increased size for better visibility */
+  height: 450px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -302,8 +302,8 @@
   }
   
   .profile-image-wrapper {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     margin: 0 auto;
   }
   

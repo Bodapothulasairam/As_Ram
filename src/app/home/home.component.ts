@@ -168,9 +168,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     const urls = {
       'LinkedIn': 'https://www.linkedin.com/in/sairam-bodapothula/',
       'Github': 'https://github.com/Bodapothulasairam',
-      'Instagram': 'https://www.instagram.com/sairamchowdary687/',
-      'Twitter': 'https://twitter.com/sairam_dev',
-      'Email': 'mailto:sairam.bodapothula@example.com'
+      'Instagram': 'https://www.instagram.com/ram_the_only_1/',
+      'Twitter': 'https://twitter.com/sairam687',
+      'Email': 'mailto:sairambodapothula0990@gmail.com'
     };
     
     if (urls[platform as keyof typeof urls]) {
