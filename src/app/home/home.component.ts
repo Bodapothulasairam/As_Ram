@@ -44,14 +44,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   
   // Stats
   stats = [
-    { label: "Years Experience", value: "1+", icon: "" },
+    { label: "Years Experience", value: "5+", icon: "" },
     { label: "Projects Completed", value: "10+", icon: "" },
     { label: "Technologies", value: "15+", icon: "⚡" },
     { label: "Certifications", value: "3", icon: "🏆" }
   ];
   
   // Enhanced overview
-  overview = "Passionate Software Engineer with 1+ years of expertise in full-stack development, cloud solutions, and DevOps practices. Certified in Oracle Java SE 8, Microsoft Azure, and DevOps. I specialize in creating scalable, secure applications and mentoring teams to deliver innovative solutions.";
+  overview = "Passionate Software Engineer with 5+ years of expertise in full-stack development, cloud solutions, and DevOps practices. Certified in Oracle Java SE 8, Microsoft Azure, and DevOps. I specialize in creating scalable, secure applications and mentoring teams to deliver innovative solutions.";
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
