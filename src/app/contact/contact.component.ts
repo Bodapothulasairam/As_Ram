@@ -50,10 +50,10 @@ export class ContactComponent implements OnInit, AfterViewInit {
   contactInfo: ContactInfo[] = [
     {
       title: 'Email',
-      value: 'sairam.bodapothula@gmail.com',
+      value: 'sairambodapothula0990@gmail.com',
       icon: 'fas fa-envelope',
       color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      link: 'mailto:sairam.bodapothula@gmail.com',
+      link: 'mailto:sairambodapothula0990@gmail.com',
       action: 'Send Email'
     },
     {
