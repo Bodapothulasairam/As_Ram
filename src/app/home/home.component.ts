@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (!isPlatformBrowser(this.platformId)) return;
     
     const urls = {
-      'LinkedIn': 'https://www.linkedin.com/in/sairam-bodapothula/',
+      'LinkedIn': 'https://www.linkedin.com/in/sairambodapothula/',
       'Github': 'https://github.com/Bodapothulasairam',
       'Instagram': 'https://www.instagram.com/ram_the_only_1/',
       'Twitter': 'https://twitter.com/sairam687',
