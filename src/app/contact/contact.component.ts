@@ -73,7 +73,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     },
     {
       title: 'LinkedIn',
-      value: 'linkedin.com/in/sairam-bodapothula',
+      value: 'linkedin.com/in/sairambodapothula',
       icon: 'fab fa-linkedin',
       color: 'linear-gradient(135deg, #0077b5 0%, #005885 100%)',
       link: 'https://linkedin.com/in/sairambodapothula/',
